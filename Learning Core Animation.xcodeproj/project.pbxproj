@@ -15,6 +15,8 @@
 		1F6658AB1A433ED300D10F21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F6658AA1A433ED300D10F21 /* Images.xcassets */; };
 		1F6658AE1A433ED300D10F21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F6658AC1A433ED300D10F21 /* LaunchScreen.xib */; };
 		1F6658BA1A433ED300D10F21 /* Learning_Core_AnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6658B91A433ED300D10F21 /* Learning_Core_AnimationTests.m */; };
+		1F6658C41A433F5100D10F21 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F6658C31A433F5100D10F21 /* logo.png */; };
+		1F6658C61A4346F600D10F21 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6658C51A4346F600D10F21 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		1F6658B31A433ED300D10F21 /* Learning Core AnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Learning Core AnimationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6658B81A433ED300D10F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F6658B91A433ED300D10F21 /* Learning_Core_AnimationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Learning_Core_AnimationTests.m; sourceTree = "<group>"; };
+		1F6658C31A433F5100D10F21 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		1F6658C51A4346F600D10F21 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F6658C61A4346F600D10F21 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,9 +70,11 @@
 		1F66588E1A433ED200D10F21 = {
 			isa = PBXGroup;
 			children = (
+				1F6658C51A4346F600D10F21 /* QuartzCore.framework */,
 				1F6658991A433ED200D10F21 /* Learning Core Animation */,
 				1F6658B61A433ED300D10F21 /* Learning Core AnimationTests */,
 				1F6658981A433ED200D10F21 /* Products */,
+				1F6658C31A433F5100D10F21 /* logo.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F6658C41A433F5100D10F21 /* logo.png in Resources */,
 				1F6658A91A433ED300D10F21 /* Main.storyboard in Resources */,
 				1F6658AE1A433ED300D10F21 /* LaunchScreen.xib in Resources */,
 				1F6658AB1A433ED300D10F21 /* Images.xcassets in Resources */,
@@ -350,6 +358,7 @@
 				INFOPLIST_FILE = "Learning Core Animation/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -360,6 +369,7 @@
 				INFOPLIST_FILE = "Learning Core Animation/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
