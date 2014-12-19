@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *layerview; // SuperView
 @property (nonatomic, strong)  UIView *coneView;
+@property (nonatomic, strong) CALayer* bluelayer;
+@property (nonatomic, strong) CALayer* redlayer;
 
 @end
 
@@ -41,52 +43,19 @@
     // Setting a strechable image. Can also be done in the attributes inspector
     [self addStrechableImage:image withContenCenter:CGRectMake(0.25, 0.25, 0.75, 0.75) toViewLayer:self.coneView.layer];
     
-    // Implementing the CALayerDelegate
-    CALayer* bluelayer          = [CALayer layer];
-    bluelayer.backgroundColor   = [UIColor blueColor].CGColor;
-    bluelayer.frame             = CGRectMake(200, 200, 100, 100);
-    
-    bluelayer.delegate = self;
-    
-    [self.layerview.layer addSublayer:bluelayer];
-    
-    [bluelayer display]; // To Update the layer's content
-    
-    // Creating layer heirarchies. redlayer on bluelayer on superlayer.
-    CALayer* redlayer           = [CALayer layer];
-    redlayer.backgroundColor    = [UIColor redColor].CGColor;
-    redlayer.frame              = CGRectMake(0, 0, bluelayer.bounds.size.width , bluelayer.bounds.size.height); // 0,0 due to bounds                 property of bluelayer.
-    
-    [bluelayer addSublayer:redlayer];
-    
-    // Shadows
-    bluelayer.shadowOpacity = 0.5;              // Can be within 0 and 1
-    bluelayer.shadowOffset = CGSizeMake(3, 3);
-    bluelayer.shadowRadius = 5;                 // Makes the shadow blurry
-    
-    bluelayer.cornerRadius = 10;
-    bluelayer.masksToBounds = YES; // Clips all sublayers to the layers bounds.
-    // When we run the application then the shadow has been applied but it is important to note that the shadow is clipped due to masksToBounds property.
-    
-    
-    /*  To add a shadow we add a layer, which i have named shadowlayer.
-        Now superlayer->shadowlayer->bluelayer->redlayer.
-        We apply the shadow to the shadowlayer and now the shadow appears.
-     */
-    
-    CALayer* shadowlayer = [CALayer layer];
-    shadowlayer.backgroundColor = [UIColor blackColor].CGColor;
-    shadowlayer.frame = CGRectMake(100, 100, 100 , 100);
-    [self.layerview.layer replaceSublayer:bluelayer with:shadowlayer];
+}
 
-    shadowlayer.shadowOpacity = 0.5;
-    shadowlayer.shadowOffset = CGSizeMake(3, 3);
-    shadowlayer.shadowRadius = 5;
-    shadowlayer.cornerRadius = bluelayer.cornerRadius;
+- (void)viewDidAppear:(BOOL)animated
+{
+    /* I created the methods and pragma marks in an attempt to create the code more readable and easier to find and comprehend.*/
     
-    bluelayer.frame = CGRectMake(0, 0, shadowlayer.bounds.size.width , shadowlayer.bounds.size.height); // 0,0 due to bounds                 property of shadowlayer.
-    [shadowlayer addSublayer:bluelayer];
+    [self useDelegate];
     
+    [self redlayerOnBluelayer];
+    
+    [self shadowProblem];
+    
+    [self shadowProblemSolved];
 }
 
 #pragma mark - UIView sets itself as the delegate of its back layer
@@ -114,7 +83,22 @@
     CGContextStrokeEllipseInRect(ctx, layer.bounds);
 }
 
-#pragma mark - Helper Methods
+- (void) useDelegate
+{
+    // Implementing the CALayerDelegate
+    self.bluelayer          = [CALayer layer];
+    self.bluelayer.backgroundColor   = [UIColor blueColor].CGColor;
+    self.bluelayer.frame             = CGRectMake(200, 200, 100, 100);
+    
+    self.bluelayer.delegate = self;
+    
+    [self.layerview.layer addSublayer:self.bluelayer];
+    
+    [self.bluelayer display]; // To Update the layer's content
+    
+}
+
+#pragma mark - Playing with layer
 
 - (void) addStrechableImage:(UIImage *)image withContenCenter:(CGRect)rect toViewLayer:(CALayer*)layer
 {
@@ -130,6 +114,61 @@
 - (void) setBackgroungColorToLayer:(UIColor*)color toLayer:(CALayer *)layer
 {
     layer.backgroundColor = color.CGColor;
+}
+
+#pragma mark - layer heirarchy
+
+- (void) redlayerOnBluelayer
+{
+    
+    // Creating layer heirarchies. redlayer on bluelayer on superlayer.
+    self.redlayer           = [CALayer layer];
+    self.redlayer.backgroundColor    = [UIColor redColor].CGColor;
+    self.redlayer.frame              = CGRectMake(0, 0, self.bluelayer.bounds.size.width , self.bluelayer.bounds.size.height); // 0,0 due to bounds                 property of bluelayer.
+    
+    [self.bluelayer addSublayer:self.redlayer];
+
+    
+}
+
+#pragma mark - Shadows
+
+- (void) shadowProblem
+{
+    
+    // Shadows
+    self.bluelayer.shadowOpacity = 0.5;              // Can be within 0 and 1
+    self.bluelayer.shadowOffset = CGSizeMake(3, 3);
+    self.bluelayer.shadowRadius = 5;                 // Makes the shadow blurry
+    
+    self.bluelayer.cornerRadius = 10;
+    self.bluelayer.masksToBounds = YES; // Clips all sublayers to the layers bounds.
+    // When we run the application then the shadow has been applied but it is important to note that the shadow is clipped due to masksToBounds property.
+    
+}
+
+- (void) shadowProblemSolved
+{
+    
+    /*  To add a shadow we add a layer, which i have named shadowlayer.
+     Now superlayer->shadowlayer->bluelayer->redlayer.
+     We apply the shadow to the shadowlayer and now the shadow appears.
+     */
+    
+    CALayer* shadowlayer = [CALayer layer];
+    shadowlayer.backgroundColor = [UIColor blackColor].CGColor;
+    shadowlayer.frame = CGRectMake(100, 100, 100 , 100);
+    [self.layerview.layer replaceSublayer:self.bluelayer with:shadowlayer];
+    
+    shadowlayer.shadowOpacity = 0.5;
+    shadowlayer.shadowOffset = CGSizeMake(3, 3);
+    shadowlayer.shadowRadius = 5;
+    shadowlayer.cornerRadius = self.bluelayer.cornerRadius;
+    
+    self.bluelayer.frame = CGRectMake(0, 0, shadowlayer.bounds.size.width , shadowlayer.bounds.size.height); // 0,0 due to bounds                 property of shadowlayer.
+    [shadowlayer addSublayer:self.bluelayer];
+
+    
 }
 
 @end
