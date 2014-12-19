@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Saurabh jain. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CA1ViewController.h"
 
 @interface ViewController ()
 
@@ -170,7 +170,6 @@
     self.bluelayer.frame = CGRectMake(0, 0, shadowlayer.bounds.size.width , shadowlayer.bounds.size.height); // 0,0 due to bounds                 property of shadowlayer.
     [shadowlayer addSublayer:self.bluelayer];
 
-    
 }
 
 @end

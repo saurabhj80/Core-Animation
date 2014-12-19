@@ -10,13 +10,15 @@
 		1F66589D1A433ED200D10F21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F66589C1A433ED200D10F21 /* main.m */; };
 		1F6658A01A433ED200D10F21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F66589F1A433ED200D10F21 /* AppDelegate.m */; };
 		1F6658A31A433ED200D10F21 /* Learning_Core_Animation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F6658A11A433ED200D10F21 /* Learning_Core_Animation.xcdatamodeld */; };
-		1F6658A61A433ED200D10F21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6658A51A433ED200D10F21 /* ViewController.m */; };
+		1F6658A61A433ED200D10F21 /* CA1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6658A51A433ED200D10F21 /* CA1ViewController.m */; };
 		1F6658A91A433ED300D10F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6658A71A433ED300D10F21 /* Main.storyboard */; };
 		1F6658AB1A433ED300D10F21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F6658AA1A433ED300D10F21 /* Images.xcassets */; };
 		1F6658AE1A433ED300D10F21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F6658AC1A433ED300D10F21 /* LaunchScreen.xib */; };
 		1F6658BA1A433ED300D10F21 /* Learning_Core_AnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6658B91A433ED300D10F21 /* Learning_Core_AnimationTests.m */; };
 		1F6658C41A433F5100D10F21 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F6658C31A433F5100D10F21 /* logo.png */; };
 		1F6658C61A4346F600D10F21 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6658C51A4346F600D10F21 /* QuartzCore.framework */; };
+		1F6658C91A43AD0100D10F21 /* CA2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6658C81A43AD0100D10F21 /* CA2ViewController.m */; };
+		1F6658CB1A43CBAE00D10F21 /* Oval1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F6658CA1A43CBAE00D10F21 /* Oval1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +38,8 @@
 		1F66589E1A433ED200D10F21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1F66589F1A433ED200D10F21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1F6658A21A433ED200D10F21 /* Learning_Core_Animation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Learning_Core_Animation.xcdatamodel; sourceTree = "<group>"; };
-		1F6658A41A433ED200D10F21 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1F6658A51A433ED200D10F21 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1F6658A41A433ED200D10F21 /* CA1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CA1ViewController.h; sourceTree = "<group>"; };
+		1F6658A51A433ED200D10F21 /* CA1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CA1ViewController.m; sourceTree = "<group>"; };
 		1F6658A81A433ED300D10F21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F6658AA1A433ED300D10F21 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1F6658AD1A433ED300D10F21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -46,6 +48,9 @@
 		1F6658B91A433ED300D10F21 /* Learning_Core_AnimationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Learning_Core_AnimationTests.m; sourceTree = "<group>"; };
 		1F6658C31A433F5100D10F21 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		1F6658C51A4346F600D10F21 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1F6658C71A43AD0100D10F21 /* CA2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CA2ViewController.h; sourceTree = "<group>"; };
+		1F6658C81A43AD0100D10F21 /* CA2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CA2ViewController.m; sourceTree = "<group>"; };
+		1F6658CA1A43CBAE00D10F21 /* Oval1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Oval1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +80,7 @@
 				1F6658B61A433ED300D10F21 /* Learning Core AnimationTests */,
 				1F6658981A433ED200D10F21 /* Products */,
 				1F6658C31A433F5100D10F21 /* logo.png */,
+				1F6658CA1A43CBAE00D10F21 /* Oval1.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,9 +98,9 @@
 			children = (
 				1F66589E1A433ED200D10F21 /* AppDelegate.h */,
 				1F66589F1A433ED200D10F21 /* AppDelegate.m */,
-				1F6658A41A433ED200D10F21 /* ViewController.h */,
-				1F6658A51A433ED200D10F21 /* ViewController.m */,
 				1F6658A71A433ED300D10F21 /* Main.storyboard */,
+				1F6658CC1A43D59A00D10F21 /* FirstViewController */,
+				1F6658CD1A43D5A400D10F21 /* SecondViewController */,
 				1F6658AA1A433ED300D10F21 /* Images.xcassets */,
 				1F6658AC1A433ED300D10F21 /* LaunchScreen.xib */,
 				1F6658A11A433ED200D10F21 /* Learning_Core_Animation.xcdatamodeld */,
@@ -127,6 +133,24 @@
 				1F6658B81A433ED300D10F21 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F6658CC1A43D59A00D10F21 /* FirstViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F6658A41A433ED200D10F21 /* CA1ViewController.h */,
+				1F6658A51A433ED200D10F21 /* CA1ViewController.m */,
+			);
+			name = FirstViewController;
+			sourceTree = "<group>";
+		};
+		1F6658CD1A43D5A400D10F21 /* SecondViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F6658C71A43AD0100D10F21 /* CA2ViewController.h */,
+				1F6658C81A43AD0100D10F21 /* CA2ViewController.m */,
+			);
+			name = SecondViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F6658C41A433F5100D10F21 /* logo.png in Resources */,
+				1F6658CB1A43CBAE00D10F21 /* Oval1.png in Resources */,
 				1F6658A91A433ED300D10F21 /* Main.storyboard in Resources */,
 				1F6658AE1A433ED300D10F21 /* LaunchScreen.xib in Resources */,
 				1F6658AB1A433ED300D10F21 /* Images.xcassets in Resources */,
@@ -232,8 +257,9 @@
 			files = (
 				1F6658A31A433ED200D10F21 /* Learning_Core_Animation.xcdatamodeld in Sources */,
 				1F6658A01A433ED200D10F21 /* AppDelegate.m in Sources */,
-				1F6658A61A433ED200D10F21 /* ViewController.m in Sources */,
+				1F6658A61A433ED200D10F21 /* CA1ViewController.m in Sources */,
 				1F66589D1A433ED200D10F21 /* main.m in Sources */,
+				1F6658C91A43AD0100D10F21 /* CA2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
