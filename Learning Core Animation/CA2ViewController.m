@@ -21,7 +21,9 @@
     
     // Applying a mask to an image
     [self imageToBeAppliedAsMask:[UIImage imageNamed:@"Oval1.png"] toImageView:self.imageview];
-
+    
+    // Slant
+    self.imageview.layer.affineTransform = CGAffineTransformMakeShear(1, 0);
 }
 
 #pragma mark - Apply Mask
@@ -35,6 +37,14 @@
     maskLayer.contentsGravity = kCAGravityCenter;
     imgview.layer.mask = maskLayer;
     
+}
+
+CGAffineTransform CGAffineTransformMakeShear( CGFloat x, CGFloat y)
+{
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    transform.c = -x;
+    transform.b = y;
+    return transform;
 }
 
 @end
