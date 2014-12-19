@@ -11,7 +11,7 @@
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *layerview; // SuperView
-@property (nonatomic, strong)  UIView *coneView;
+@property (nonatomic, strong) UIView *coneView;
 @property (nonatomic, strong) CALayer* bluelayer;
 @property (nonatomic, strong) CALayer* redlayer;
 
@@ -58,9 +58,27 @@
     [self shadowProblemSolved];
 }
 
+#pragma mark - Playing with layer
+
+- (void) addStrechableImage:(UIImage *)image withContenCenter:(CGRect)rect toViewLayer:(CALayer*)layer
+{
+    layer.contents = (__bridge id)image.CGImage;
+    layer.contentsCenter = rect;
+}
+
+- (void) setImageToLayer:(UIImage*)image toLayer:(CALayer *)layer
+{
+    layer.contents = (__bridge id)image.CGImage;
+}
+
+- (void) setBackgroungColorToLayer:(UIColor*)color toLayer:(CALayer *)layer
+{
+    layer.backgroundColor = color.CGColor;
+}
+
 #pragma mark - UIView sets itself as the delegate of its back layer
 
-/* When UIView creates its backing layer, it automatically sets itself as the layer’s delegate and provides an implementation for -displayLayer: that abstracts these issues away.
+/* When UIView creates its backing layer, it automatically sets itself as the layer’s delegate and provides an implementation for - displayLayer.
 */
 
 // This method gets called on even in the presence of CALayerDelegate - drawLayer method below
@@ -86,35 +104,19 @@
 - (void) useDelegate
 {
     // Implementing the CALayerDelegate
-    self.bluelayer          = [CALayer layer];
+    self.bluelayer                   = [CALayer layer];
     self.bluelayer.backgroundColor   = [UIColor blueColor].CGColor;
     self.bluelayer.frame             = CGRectMake(200, 200, 100, 100);
     
-    self.bluelayer.delegate = self;
+    self.bluelayer.delegate          = self;
     
     [self.layerview.layer addSublayer:self.bluelayer];
     
-    [self.bluelayer display]; // To Update the layer's content
+    [self.bluelayer display]; // To Update the layer's content. If displayLayer method is not implemented then it uses drawLayer method.
     
 }
 
-#pragma mark - Playing with layer
 
-- (void) addStrechableImage:(UIImage *)image withContenCenter:(CGRect)rect toViewLayer:(CALayer*)layer
-{
-    layer.contents = (__bridge id)image.CGImage;
-    layer.contentsCenter = rect;
-}
-
-- (void) setImageToLayer:(UIImage*)image toLayer:(CALayer *)layer
-{
-    layer.contents = (__bridge id)image.CGImage;
-}
-
-- (void) setBackgroungColorToLayer:(UIColor*)color toLayer:(CALayer *)layer
-{
-    layer.backgroundColor = color.CGColor;
-}
 
 #pragma mark - layer heirarchy
 
