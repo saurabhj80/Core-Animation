@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [self.layerview addSubview:self.coneView];
     
     UIImage* image = [UIImage imageNamed:@"logo.png"];
@@ -79,7 +79,7 @@
 #pragma mark - UIView sets itself as the delegate of its back layer
 
 /* When UIView creates its backing layer, it automatically sets itself as the layer’s delegate and provides an implementation for - displayLayer.
-*/
+ */
 
 // This method gets called on even in the presence of CALayerDelegate - drawLayer method below
 
@@ -87,7 +87,7 @@
 -(void)displayLayer:(CALayer *)layer
 {
     layer.backgroundColor = [UIColor yellowColor].CGColor;
-
+    
 }
 
 #pragma mark - CALayerDelegate
@@ -124,12 +124,12 @@
 {
     
     // Creating layer heirarchies. redlayer on bluelayer on superlayer.
-    self.redlayer           = [CALayer layer];
+    self.redlayer                    = [CALayer layer];
     self.redlayer.backgroundColor    = [UIColor redColor].CGColor;
-    self.redlayer.frame              = CGRectMake(0, 0, self.bluelayer.bounds.size.width , self.bluelayer.bounds.size.height); // 0,0 due to bounds                 property of bluelayer.
+    self.redlayer.frame              = CGRectMake(0, 0, self.bluelayer.bounds.size.width ,          self.bluelayer.bounds.size.height); // 0,0 due to bounds property of bluelayer.
     
     [self.bluelayer addSublayer:self.redlayer];
-
+    
     
 }
 
@@ -169,7 +169,7 @@
     
     self.bluelayer.frame = CGRectMake(0, 0, shadowlayer.bounds.size.width , shadowlayer.bounds.size.height); // 0,0 due to bounds                 property of shadowlayer.
     [shadowlayer addSublayer:self.bluelayer];
-
+    
 }
 
 @end

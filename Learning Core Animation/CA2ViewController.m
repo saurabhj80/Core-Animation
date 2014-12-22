@@ -29,7 +29,7 @@
     
     UIImageView* view1 = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
     UIImageView* view2 = [[UIImageView alloc] initWithFrame:CGRectMake(200, 100, 100, 100)];
-
+    
     [self.view addSubview:view1];
     [self.view addSubview:view2];
     
@@ -38,7 +38,7 @@
     
     view1.layer.transform = CATransform3DMakeRotation(M_PI_4, 0, 1, 0);
     view2.layer.transform = CATransform3DMakeRotation(-M_PI_4, 0, 1, 0);
-
+    
 }
 
 #pragma mark - Apply Mask
@@ -57,9 +57,9 @@
 
 #pragma mark - Slant image
 
-CGAffineTransform CGAffineTransformMakeShear( CGFloat x, CGFloat y)
+CGAffineTransform CGAffineTransformMakeShear(CGFloat x, CGFloat y)
 {
-
+    
     CGAffineTransform transform = CGAffineTransformIdentity;
     transform.c = -x;
     transform.b = y;
@@ -108,7 +108,7 @@ CGAffineTransform CGAffineTransformMakeShear( CGFloat x, CGFloat y)
 
 - (IBAction)slantImage:(id)sender
 {
-        self.imageview.hidden = NO;
+    self.imageview.hidden = NO;
     self.imageview.layer.affineTransform = CGAffineTransformMakeShear(1, 0);
 }
 
