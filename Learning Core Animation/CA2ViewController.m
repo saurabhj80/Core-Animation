@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.imageview.hidden = YES;
+    //self.imageview.hidden = YES;
     
     // Adding Perspective to the conatinerview adds it to all the subviews
     CATransform3D perspective = CATransform3DIdentity;
